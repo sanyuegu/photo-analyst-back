@@ -22,6 +22,9 @@
         <module>photo-core</module>
         <module>photo-auto</module>
         <module>photo-web</module>
+        <module>photo-dao</module>
+        <module>photo-user</module>
+        <module>photo-common</module>
     </modules>
 
 
@@ -33,6 +36,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
         <dependency>
