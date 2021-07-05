@@ -1,5 +1,7 @@
 package com.photo.service;
 
+import com.photo.entity.UserInfo;
+
 public interface UserService {
-    String getName();
+    UserInfo getByName(String username);
 }
