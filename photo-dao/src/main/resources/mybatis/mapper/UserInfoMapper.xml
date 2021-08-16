@@ -3,7 +3,16 @@
 
 <!-- namespace：命名空间，用于隔离sql-->
 <mapper namespace="com.photo.mapper.UserInfoMapper">
-    <select id="findByUsername" resultType="com.photo.entity.UserInfo">
-		select * from t_user where user_name = #{username}
+    <resultMap id="BaseResultMap" type="com.photo.entity.UserInfo">
+        <id column="user_id" property="userId"/>
+        <result column="user_nm" property="username"/>
+        <result column="nickname" property="nickname"/>
+        <result column="password" property="password"/>
+        <result column="is_del" property="isDel"/>
+        <result column="updt_by" property="updateBy"/>
+        <result column="updt_dt" property="updateDate"/>
+    </resultMap>
+    <select id="findByUsername" resultType="com.photo.entity.UserInfo" resultMap="BaseResultMap">
+		select * from user_basicinfo where user_nm = #{username}
 	</select>
 </mapper>
